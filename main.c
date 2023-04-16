@@ -35,12 +35,13 @@ int initTable (int table[TABLE_SIZE][TABLE_SIZE])
 
 int displayTable (int table[TABLE_SIZE][TABLE_SIZE])
 {
-	printf("|---|---|---|---|---|---|---|---|---|\n");
-	printf("|   | \033[1;32mA\033[0m | \033[1;32mB\033[0m | \033[1;32mC\033[0m | \033[1;32mD\033[0m | \033[1;32mE\033[0m | \033[1;32mF\033[0m | \033[1;32mG\033[0m | \033[1;32mH\033[0m |\n");
+	// 
+	printf("|---|---|---|---|---|---|---|---|---|---|\n");
+	printf("| \033[1;32m\\\033[0m | \033[1;32mA\033[0m | \033[1;32mB\033[0m | \033[1;32mC\033[0m | \033[1;32mD\033[0m | \033[1;32mE\033[0m | \033[1;32mF\033[0m | \033[1;32mG\033[0m | \033[1;32mH\033[0m | \033[1;32m/\033[0m |\n");
 
 	// First Line
 	printf("|");
-	for (int i = 0; i < TABLE_SIZE+1; ++i)
+	for (int i = 0; i < TABLE_SIZE+2; ++i)
 	{
 		printf("---|");
 	}
@@ -54,15 +55,24 @@ int displayTable (int table[TABLE_SIZE][TABLE_SIZE])
 		{
 			printf(" %s |", intToChess(table[i][j]) );
 		}
+		printf(" \033[1;32m%d\033[0m |", i+1);
 		printf("\n");
 		printf("|");
-		for (int i = 0; i < TABLE_SIZE+1; ++i)
+		for (int i = 0; i < TABLE_SIZE+2; ++i)
 		{
 			printf("---|");
 		}
 		printf("\n");
 	}
 
+	printf("| \033[1;32m/\033[0m | \033[1;32mA\033[0m | \033[1;32mB\033[0m | \033[1;32mC\033[0m | \033[1;32mD\033[0m | \033[1;32mE\033[0m | \033[1;32mF\033[0m | \033[1;32mG\033[0m | \033[1;32mH\033[0m | \033[1;32m\\\033[0m |\n");
+
+	// First Line
+	printf("|");
+	for (int i = 0; i < TABLE_SIZE+2; ++i)
+	{
+		printf("---|");
+	}
 	printf("\n");
 
 	return 0;
