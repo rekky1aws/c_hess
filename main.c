@@ -35,27 +35,30 @@ int initTable (int table[TABLE_SIZE][TABLE_SIZE])
 
 int displayTable (int table[TABLE_SIZE][TABLE_SIZE])
 {
+	printf("|---|---|---|---|---|---|---|---|---|\n");
+	printf("|   | \033[1;32mA\033[0m | \033[1;32mB\033[0m | \033[1;32mC\033[0m | \033[1;32mD\033[0m | \033[1;32mE\033[0m | \033[1;32mF\033[0m | \033[1;32mG\033[0m | \033[1;32mH\033[0m |\n");
+
 	// First Line
 	printf("|");
-	for (int i = 0; i < TABLE_SIZE; ++i)
+	for (int i = 0; i < TABLE_SIZE+1; ++i)
 	{
-		printf("----|");
+		printf("---|");
 	}
 	printf("\n");
 
 	// Table
 	for (int i = 0; i < TABLE_SIZE; ++i)
 	{
-		printf("|");
+		printf("| \033[1;32m%d\033[0m |", i+1);
 		for (int j = 0; j < TABLE_SIZE; ++j)
 		{
 			printf(" %s |", intToChess(table[i][j]) );
 		}
 		printf("\n");
 		printf("|");
-		for (int i = 0; i < TABLE_SIZE; ++i)
+		for (int i = 0; i < TABLE_SIZE+1; ++i)
 		{
-			printf("----|");
+			printf("---|");
 		}
 		printf("\n");
 	}
@@ -149,69 +152,69 @@ char *intToChess (int value)
 	switch(value) {
 		// Empty Space
 		case 0 :
-			return "  ";
+			return " ";
 		break;
 
 	// WHITE
 		// White King
 		case 10 :
-			return "wK";
+			return "\033[1;34mK\033[0m";
 		break;
 
 		// White Queen
 		case 11 :
-			return "wQ";
+			return "\033[1;34mQ\033[0m";
 		break;
 		
 		// White Rook
 		case 12 :
-			return "wR";
+			return "\033[1;34mR\033[0m";
 		break;
 
 		// White Bishop
 		case 13 :
-			return "wB";
+			return "\033[1;34mB\033[0m";
 		break;
 
 		// White Knight
 		case 14 :
-			return "wH";
+			return "\033[1;34mH\033[0m";
 		break;
 
 		// White Pawn
 		case 15 :
-			return "wP";
+			return "\033[1;34mP\033[0m";
 		break;
 
 	// BLACK
 		// Black King
 		case 20 :
-			return "bK";
+			return "\033[1;31mK\033[0m";
 		break;
 
 		// Black Queen
 		case 21 :
-			return "bQ";
+			return "\033[1;31mQ\033[0m";
 		break;
 		
 		// Black Rook
 		case 22 :
-			return "bR";
+			return "\033[1;31mR\033[0m";
 		break;
 
 		// Black Bishop
 		case 23 :
-			return "bB";
+			return "\033[1;31mB\033[0m";
 		break;
 
 		// Black Knight
 		case 24 :
-			return "bH";
+			return "\033[1;31mH\033[0m";
 		break;
 
 		// Black Pawn
 		case 25 :
-			return "bP";
+			return "\033[1;31mP\033[0m";
 		break;
 		
 		// Error
