@@ -159,23 +159,29 @@ char *intToChess (int value)
 // MAIN
 int main ()
 {
+	// Variables Initialisation
 	int table[TABLE_SIZE][TABLE_SIZE];
 	char sC, dC;
 	int sourceLine, destLine, sourceCol, destCol;
 
+	// Boolean to check if one of the player won the game
 	bool winFlag = FALSE;
 
+	// Initializing pieces positions in table
 	initTable(table);
 
 	// do {
 		displayTable(table);
 
+		// Inputing the source
 		printf("\nInput the source : ");
 		scanf("%c%d", &sC, &sourceLine );
 
+		// Translating source input to numbers
 		sourceCol = (int) sC - 97;
 		sourceLine--;
 
+		// Debug to see what's returned.
 		printf("Col : %c (= %d), Line : %d\n", sC, sourceCol, sourceLine);
 
 	// } while (winFlag == TRUE);
