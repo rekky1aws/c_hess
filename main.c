@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "bool.h"
 
 #define TABLE_SIZE 8
 
@@ -77,85 +78,6 @@ int displayTable (int table[TABLE_SIZE][TABLE_SIZE])
 
 	return 0;
 }
-
-/*
-char *intToChess (int value)
-{
-	switch(value) {
-		// Empty Space
-		case 0 :
-			return " ";
-		break;
-
-	// WHITE
-		// White King
-		case 10 :
-			return "♔";
-		break;
-
-		// White Queen
-		case 11 :
-			return "♕";
-		break;
-		
-		// White Rook
-		case 12 :
-			return "♖";
-		break;
-
-		// White Bishop
-		case 13 :
-			return "♗";
-		break;
-
-		// White Knight
-		case 14 :
-			return "♘";
-		break;
-
-		// White Pawn
-		case 15 :
-			return "♙";
-		break;
-
-	// BLACK
-		// Black King
-		case 20 :
-			return "♚";
-		break;
-
-		// Black Queen
-		case 21 :
-			return "♛";
-		break;
-		
-		// Black Rook
-		case 22 :
-			return "♜";
-		break;
-
-		// Black Bishop
-		case 23 :
-			return "♝";
-		break;
-
-		// Black Knight
-		case 24 :
-			return "♞";
-		break;
-
-		// Black Pawn
-		case 25 :
-			return "♟︎";
-		break;
-		
-		// Error
-		default :
-			return "?";
-		break;
-	}
-}
-*/
 
 char *intToChess (int value)
 {
@@ -238,9 +160,27 @@ char *intToChess (int value)
 int main ()
 {
 	int table[TABLE_SIZE][TABLE_SIZE];
+	char sC, dC;
+	int sourceLine, destLine, sourceCol, destCol;
+
+	bool winFlag = FALSE;
 
 	initTable(table);
-	displayTable(table);
+
+	// do {
+		displayTable(table);
+
+		printf("\nInput the source : ");
+		scanf("%c%d", &sC, &sourceLine );
+
+		sourceCol = (int) sC - 97;
+		sourceLine--;
+
+		printf("Col : %c (= %d), Line : %d\n", sC, sourceCol, sourceLine);
+
+	// } while (winFlag == TRUE);
+
+	
 
 	return 0;
 }
