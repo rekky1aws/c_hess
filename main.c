@@ -168,32 +168,32 @@ char *intToChess (int value)
 	// WHITE
 		// White King
 		case 10 :
-			return "\033[1;34mK\033[0m";
+			return "\033[1;34mk\033[0m";
 		break;
 
 		// White Queen
 		case 11 :
-			return "\033[1;34mQ\033[0m";
+			return "\033[1;34mq\033[0m";
 		break;
 		
 		// White Rook
 		case 12 :
-			return "\033[1;34mR\033[0m";
+			return "\033[1;34mr\033[0m";
 		break;
 
 		// White Bishop
 		case 13 :
-			return "\033[1;34mB\033[0m";
+			return "\033[1;34mb\033[0m";
 		break;
 
 		// White Knight
 		case 14 :
-			return "\033[1;34mH\033[0m";
+			return "\033[1;34mh\033[0m";
 		break;
 
 		// White Pawn
 		case 15 :
-			return "\033[1;34mP\033[0m";
+			return "\033[1;34mp\033[0m";
 		break;
 
 	// BLACK
